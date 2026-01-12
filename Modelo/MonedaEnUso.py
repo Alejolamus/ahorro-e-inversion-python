@@ -7,6 +7,6 @@ class MonedasEnUso(Base):
     __tablename__ = "Moneda_en_uso"
 
     id = Column(int, primary_key=True)
-    idUser = Column(Integer, ForeignKey('Usuarios.id'), nullable = False)
-    idMoneda = Column(Integer, ForeignKey('Monedas.id'), nullable = False)
-    Monto = Column(Float, nullable = False)
+    id_user = Column(Integer, ForeignKey('Usuarios.id'), nullable = False)
+    id_moneda = Column(Integer, ForeignKey('Monedas.id'), nullable = False)
+    monto = Column(Float, nullable = False)

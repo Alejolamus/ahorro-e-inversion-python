@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, ForeignKey, Float, Date
-from sqlalchemy.orm import relationship
 from DeclarativeBase import Base
 
 class RegistroDeParticipaciones(Base):

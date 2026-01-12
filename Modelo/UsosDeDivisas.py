@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Enum as SQLEnum, Date, Boolean
+from sqlalchemy import Column, Integer, String, ForeignKey, Enum as SQLEnum, Date, Boolean, Float
 from sqlalchemy.orm import relationship
 from enum import Enum
 from DeclarativeBase import Base
@@ -17,6 +17,7 @@ class Frecuencias(str, Enum):
 class UsoDeDivisas(Base):
     __tablename__ = "Uso_de_divisas"
     id = Column(Integer, primary_key = True)
+    id_usuario=Column(Integer, ForeignKey("Usuario.id"))
     tipo = Column(
         SQLEnum(Clasificacion, name = "clasificacion_ingresos_gastos"),
         nullable=False)
@@ -27,4 +28,5 @@ class UsoDeDivisas(Base):
     registro_automatico = Column(Boolean, nullable = False)
     frecuencia = Column(Frecuencias, name = "frecuencia_de_ingresos",
                        nullable = False)
+    monto_transaccion = Column(Float, nullable = False)
     movimientos1 = relationship('Movimientos', cascade='save-update')

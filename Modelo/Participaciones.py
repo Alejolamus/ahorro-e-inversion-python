@@ -18,5 +18,6 @@ class Participaciones(Base):
     fecha_de_inicio = Column(Date, nullable = False)
     entidad = Column(String, nullable = False)
     numero_de_participaciones = Column(Integer, nullable = False)
+    id_moneda_participacion = Column(Integer, nullable = False)
     valor_participacion = Column(Float,nullable = False)
     registro_inversiones = relationship('RegistroDeParticipaciones', cascade='all, delete, delete-orphan')
