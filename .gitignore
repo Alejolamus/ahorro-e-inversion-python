@@ -1,11 +1,25 @@
-# Ignorar el entorno virtual
+# Entornos virtuales
 .venv/
+venv/
+env/
 
-# Ignorar archivos compilados de Python
+# Cache de Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 
-# Ignorar configuración de VS Code (si usas)
+# Base de datos local
+*.sqlite
+*.db
+
+# Variables de entorno
+.env
+
+# Logs
+*.log
+
+# VS Code
 .vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

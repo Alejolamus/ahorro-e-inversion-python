@@ -1,12 +1,11 @@
 from sqlalchemy import Column, Integer, ForeignKey, Float, Date, Boolean, String
-from sqlalchemy.orm import relationship
-from DeclarativeBase import Base
+from database import Base
 
 class Cdt(Base):
 
     __tablename__ = "cdt"
 
-    id = Column(Integer, primary_kay = True)
+    id = Column(Integer, primary_key = True)
     id_user = Column(Integer, ForeignKey("Usuarios.id"), 
                      nullable = False)
     fecha_inicio = Column(Date, nullable = False)
