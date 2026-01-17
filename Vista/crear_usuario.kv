@@ -1,0 +1,56 @@
+<CrearUsuarioScreen>:
+    name: "crear_usuario"
+
+    MDCard:
+        size_hint: None, None
+        size: 500, 600
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 20
+        orientation: "vertical"
+
+        
+
+        MDTextField:
+            id: username
+            mode: "round"
+            icon_left: "account-check"
+            hint_text: "Nombre Completo"
+            size_hint_x: None
+            width: 220
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: correo
+            mode: "round"
+            icon_left: "account-check"
+            hint_text: "Correo"
+            size_hint_x: None
+            width: 220
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: contraseña
+            mode: "round"
+            icon_left: "key-variant"
+            hint_text: "Contraseña"
+            password: True
+            size_hint_x: None
+            width: 220
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: confimar_contraseña
+            mode: "round"
+            icon_left: "key-variant"
+            hint_text: "Confirme Contraseña"
+            password: True
+            size_hint_x: None
+            width: 220
+            pos_hint: {"center_x": 0.5}
+
+        MDFillRoundFlatButton:
+            text: "Registrar"
+            pos_hint: {"center_x": 0.5}
+            on_release: 
