@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, ForeignKey, Float, Date, Boolean, String
-from database import Base
+from base import Base
 
 class Cdt(Base):
 

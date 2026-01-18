@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, ForeignKey, Float, Date
-from database import Base
+from base import Base
 
 class RegistroDeParticipaciones(Base):
     __tablename__ = "registro_de_participaciones"

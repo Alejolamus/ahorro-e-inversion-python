@@ -16,16 +16,17 @@
             font_size: 120
 
         MDTextField:
-            id: username
+            id: correo
             mode: "round"
             icon_left: "account-check"
-            hint_text: "Username"
+            hint_text: "Correo"
             size_hint_x: None
             width: 220
             pos_hint: {"center_x": 0.5}
+            on_text: root.on_text_change()
 
         MDTextField:
-            id: password
+            id: contraseña
             mode: "round"
             icon_left: "key-variant"
             hint_text: "Password"
@@ -33,11 +34,14 @@
             size_hint_x: None
             width: 220
             pos_hint: {"center_x": 0.5}
+            on_text: root.on_text_change()
 
         MDFillRoundFlatButton:
+            id: button_login
             text: "Login"
             pos_hint: {"center_x": 0.5}
-            on_release: 
+            disabled: True
+            on_release: root.validar_login()
 
         MDTextButton:
             text: "Crear Usuario"

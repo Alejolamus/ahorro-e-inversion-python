@@ -20,6 +20,7 @@
             size_hint_x: None
             width: 220
             pos_hint: {"center_x": 0.5}
+            on_text: root.on_text_change()
 
         MDTextField:
             id: correo
@@ -29,6 +30,17 @@
             size_hint_x: None
             width: 220
             pos_hint: {"center_x": 0.5}
+            on_text: root.on_text_change()
+
+        MDTextField:
+            id: confirmar_correo
+            mode: "round"
+            icon_left: "account-check"
+            hint_text: "Confirmar Correo"
+            size_hint_x: None
+            width: 220
+            pos_hint: {"center_x": 0.5}
+            on_text: root.on_text_change()
 
         MDTextField:
             id: contraseña
@@ -39,9 +51,10 @@
             size_hint_x: None
             width: 220
             pos_hint: {"center_x": 0.5}
+            on_text: root.on_text_change()
 
         MDTextField:
-            id: confimar_contraseña
+            id: confirmar_contraseña
             mode: "round"
             icon_left: "key-variant"
             hint_text: "Confirme Contraseña"
@@ -49,8 +62,11 @@
             size_hint_x: None
             width: 220
             pos_hint: {"center_x": 0.5}
+            on_text: root.on_text_change()
 
         MDFillRoundFlatButton:
+            id: boton_registrar
             text: "Registrar"
             pos_hint: {"center_x": 0.5}
-            on_release: 
+            disabled: True 
+            on_release: root.registrar_usuario()

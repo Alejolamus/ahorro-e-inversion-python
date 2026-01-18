@@ -10,7 +10,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import relationship
 from enum import Enum
-from database import Base
+from base import Base
 
 
 class Clasificacion(str, Enum):

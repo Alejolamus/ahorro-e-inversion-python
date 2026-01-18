@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, Float
 from sqlalchemy.orm import relationship
-
-from database import Base
+from base import Base
 
 class MonedasEnUso(Base):
     __tablename__ = "Moneda_en_uso"

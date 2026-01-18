@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, Float, Date
 from sqlalchemy.orm import relationship
-
-from database import Base
+from base import Base
 
 class Movimientos(Base):
     __tablename__ ="movimientos"

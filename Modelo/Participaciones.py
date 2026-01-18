@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Float, Enum as SQLEnum, Date
 from sqlalchemy.orm import relationship
 from enum import Enum
-from database import Base
+from base import Base
 
 
 class Inversiones(str, Enum):
