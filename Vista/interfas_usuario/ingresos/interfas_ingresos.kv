@@ -1,0 +1,96 @@
+<InterfasIngresosScreen>:
+    name: "interfas_ingresos"
+
+    MDCard:
+        size_hint: 1, 1
+        elevation: 10
+
+        MDBoxLayout:
+            orientation: "horizontal"
+
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint: 0.25, 1
+                height: self.minimum_height
+                padding: "10dp"
+                spacing: "8dp"
+                md_bg_color: 0.95, 0.95, 0.95, 1
+
+                MDTextButton:
+                    text: "Nuevo ingreso"
+                    on_release: app.root.current = "nuevo_ingreso"
+
+                MDTextButton:
+                    text: "Registro manual"
+
+                MDTextButton:
+                    text: "Eliminar ingreso"
+
+                MDTextButton:
+                    text: "Historial"
+
+
+
+                Widget:
+
+                MDTextButton:
+                    text: "Inicio"
+                    on_release: app.root.current = "dashboard"
+
+            # ==================================================
+            # ÁREA PRINCIPAL (MAQUETADO)
+            # ==================================================
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: "12dp"
+                spacing: "12dp"
+
+                # -------- COLUMNA IZQUIERDA --------
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: "10dp"
+
+                    MDLabel:
+                        text: "Gráfico de ingresos mensual"
+                        halign: "center"
+                        font_style: "H6"
+                        size_hint_y: None
+                        height: "40dp"
+
+                    MDBoxLayout:
+                        md_bg_color: 0.9, 0.9, 0.9, 1
+
+                    MDLabel:
+                        text: "Gráfico ingresos anual"
+                        halign: "center"
+                        font_style: "H6"
+                        size_hint_y: None
+                        height: "40dp"
+
+                    MDBoxLayout:
+                        md_bg_color: 0.9, 0.9, 0.9, 1
+
+                # -------- COLUMNA DERECHA --------
+                MDBoxLayout:
+                    orientation: "vertical"
+                    spacing: "10dp"
+
+                    MDLabel:
+                        text: "Gráfico de ingresos ocacionales mes"
+                        halign: "center"
+                        font_style: "H6"
+                        size_hint_y: None
+                        height: "40dp"
+
+                    MDBoxLayout:
+                        md_bg_color: 0.9, 0.9, 0.9, 1
+
+                    MDLabel:
+                        text: "Gráfico de proyeccion"
+                        halign: "center"
+                        font_style: "H6"
+                        size_hint_y: None
+                        height: "40dp"
+
+                    MDBoxLayout:
+                        md_bg_color: 0.9, 0.9, 0.9, 1

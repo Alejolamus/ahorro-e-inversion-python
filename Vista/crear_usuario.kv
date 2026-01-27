@@ -1,72 +1,85 @@
 <CrearUsuarioScreen>:
     name: "crear_usuario"
 
-    MDCard:
-        size_hint: None, None
-        size: 500, 600
-        pos_hint: {"center_x": 0.5, "center_y": 0.5}
-        elevation: 10
-        padding: 25
-        spacing: 20
+    MDBoxLayout: 
         orientation: "vertical"
+        padding: 20
+        spacing: 10
 
-        
+        # -------- Botón Atrás --------
+        MDBoxLayout:
+            size_hint_y: None
+            height: "40dp"
+            orientation: "horizontal"
 
-        MDTextField:
-            id: username
-            mode: "round"
-            icon_left: "account-check"
-            hint_text: "Nombre Completo"
-            size_hint_x: None
-            width: 220
-            pos_hint: {"center_x": 0.5}
-            on_text: root.on_text_change()
+            MDTextButton:
+                text: "Atrás"
+                on_release: app.root.current = "login"
 
-        MDTextField:
-            id: correo
-            mode: "round"
-            icon_left: "account-check"
-            hint_text: "Correo"
-            size_hint_x: None
-            width: 220
-            pos_hint: {"center_x": 0.5}
-            on_text: root.on_text_change()
+        # -------- Formulario con scroll --------
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 25
+                spacing: 20
 
-        MDTextField:
-            id: confirmar_correo
-            mode: "round"
-            icon_left: "account-check"
-            hint_text: "Confirmar Correo"
-            size_hint_x: None
-            width: 220
-            pos_hint: {"center_x": 0.5}
-            on_text: root.on_text_change()
+                MDTextField:
+                    id: username
+                    mode: "round"
+                    icon_left: "account-check"
+                    hint_text: "Nombre Completo"
+                    size_hint_x: None
+                    width: 220
+                    pos_hint: {"center_x": 0.5}
+                    on_text: root.on_text_change()
 
-        MDTextField:
-            id: contraseña
-            mode: "round"
-            icon_left: "key-variant"
-            hint_text: "Contraseña"
-            password: True
-            size_hint_x: None
-            width: 220
-            pos_hint: {"center_x": 0.5}
-            on_text: root.on_text_change()
+                MDTextField:
+                    id: correo
+                    mode: "round"
+                    icon_left: "account-check"
+                    hint_text: "Correo"
+                    size_hint_x: None
+                    width: 220
+                    pos_hint: {"center_x": 0.5}
+                    on_text: root.on_text_change()
 
-        MDTextField:
-            id: confirmar_contraseña
-            mode: "round"
-            icon_left: "key-variant"
-            hint_text: "Confirme Contraseña"
-            password: True
-            size_hint_x: None
-            width: 220
-            pos_hint: {"center_x": 0.5}
-            on_text: root.on_text_change()
+                MDTextField:
+                    id: confirmar_correo
+                    mode: "round"
+                    icon_left: "account-check"
+                    hint_text: "Confirmar Correo"
+                    size_hint_x: None
+                    width: 220
+                    pos_hint: {"center_x": 0.5}
+                    on_text: root.on_text_change()
 
-        MDFillRoundFlatButton:
-            id: boton_registrar
-            text: "Registrar"
-            pos_hint: {"center_x": 0.5}
-            disabled: True 
-            on_release: root.registrar_usuario()
+                MDTextField:
+                    id: contraseña
+                    mode: "round"
+                    icon_left: "key-variant"
+                    hint_text: "Contraseña"
+                    password: True
+                    size_hint_x: None
+                    width: 220
+                    pos_hint: {"center_x": 0.5}
+                    on_text: root.on_text_change()
+
+                MDTextField:
+                    id: confirmar_contraseña
+                    mode: "round"
+                    icon_left: "key-variant"
+                    hint_text: "Confirme Contraseña"
+                    password: True
+                    size_hint_x: None
+                    width: 220
+                    pos_hint: {"center_x": 0.5}
+                    on_text: root.on_text_change()
+
+                MDFillRoundFlatButton:
+                    id: boton_registrar
+                    text: "Registrar"
+                    pos_hint: {"center_x": 0.5}
+                    disabled: True 
+                    on_release: root.registrar_usuario()

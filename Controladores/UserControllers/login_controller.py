@@ -13,9 +13,16 @@ class LoginController:
             acceso_autorizado=self.crypto.VerificarContraseña(contraseña, hass_a_verificar)
                 
             if acceso_autorizado:
-                return f"Bienvenido {usuario_correo.usuario}"
+                valores={"auth_login": True,
+                         "Texto":f"Bienvenido {usuario_correo.usuario}"
+                }
+                return valores
             else:
-                return "acceso denegado"
+                valores1={"auth_login": False,
+                          "Texto": "acceso denegado"}
+                return valores1
         else:
-                return "Usuario no encontrado"
+                valores2={"auth_login": False,
+                          "Texto": "Usuario no encontrado"}
+                return valores2
                       

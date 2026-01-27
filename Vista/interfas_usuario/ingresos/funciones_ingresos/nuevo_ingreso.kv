@@ -1,0 +1,65 @@
+#:import dp kivy.metrics.dp
+
+<NuevoIngresoScreen>:
+    name: "nuevo_ingreso"
+
+    MDCard:
+        size_hint: 1, 1
+        elevation: 10
+        padding: dp(16)
+
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: 0.1, 1
+            spacing: dp(12)
+
+            # ---------- BOTÓN ATRÁS ----------
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(40)
+
+                MDTextButton:
+                    text: "Atrás"
+                    on_release: app.root.current = "interfas_ingresos"
+
+            # ---------- FORMULARIO ----------
+            MDTextField:
+                id: nombre
+                mode: "round"
+                hint_text: "Nombre o concepto del ingreso"
+
+            MDTextField:
+                id: fecha_inicio
+                mode: "round"
+                hint_text: "Fecha inicio"
+
+            MDTextField:
+                id: fecha_fin
+                mode: "round"
+                hint_text: "Fecha fin"
+
+            # ---------- SELECTOR DE MONEDA ----------
+            MDBoxLayout:
+                orientation: "horizontal"
+                size_hint_y: None
+                height: dp(48)
+                padding: dp(12)
+                md_bg_color: app.theme_cls.bg_light
+
+                MDLabel:
+                    id: moneda_seleccionada
+                    text: "Seleccionar moneda"
+                    halign: "left"
+
+                MDIconButton:
+                    icon: "chevron-down"
+                    on_release: root.abrir_selector()  # aquí abrimos el MDDialog con las monedas
+
+            MDTextField:
+                id: monto
+                mode: "round"
+                hint_text: "Monto"
+
+            MDFillRoundFlatButton:
+                text: "Registrar"
+                pos_hint: {"center_x": 0.5}

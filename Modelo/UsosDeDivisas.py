@@ -60,8 +60,6 @@ class UsoDeDivisas(Base):
         nullable=False
     )
 
-    monto_transaccion = Column(Float, nullable=False)
-
     movimientos1 = relationship(
         "Movimientos",
         cascade="save-update"

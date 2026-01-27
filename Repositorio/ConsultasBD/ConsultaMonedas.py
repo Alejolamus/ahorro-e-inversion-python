@@ -4,7 +4,7 @@ from Modelo.Monedas import Monedas
 def ConsultaMonedas(
     db:Session,
 ):
-    monedas_db = db.query(Monedas).all()
+    monedas_db = db.query(Monedas.pais,Monedas.nombre_divisa).all()
     return monedas_db
 def consultarIso2(
     db:Session,

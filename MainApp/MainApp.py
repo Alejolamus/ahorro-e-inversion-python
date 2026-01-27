@@ -1,6 +1,4 @@
 from kivymd.app import MDApp
-from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager
 from database import engine
 from base import Base
 from Modelo.Usuarios import Usuarios
@@ -11,13 +9,13 @@ from Modelo.Participaciones import Participaciones
 from Modelo.RegistroDeParticipaciones import RegistroDeParticipaciones
 from Modelo.Movimientos import Movimientos
 from Modelo.UsosDeDivisas import UsoDeDivisas
-from Screens.login import LoginScreen
-from Screens.recuperar_password import RecuperarPasswordScreen
-from Screens.crear_usuario import CrearUsuarioScreen
-from Screens.dashborad import DashboardScreen
 from database import SessionLocal
+from MainApp.readKV import ReaderKV
+from MainApp.ScreensMG import ScreensMG
 from Controladores.UserControllers.crear_usuario_controller import UsuarioController
 from Controladores.UserControllers.login_controller import LoginController
+from Controladores.UserControllers.dashboard.ingresos.nuevo_ingreso import NuevoIngresoController
+from bootstrap.monedas_inyeccion import MonedaBootstrap
 
 class MainApp(MDApp):
 
@@ -30,22 +28,18 @@ class MainApp(MDApp):
         # Crear UNA sesión
         self.db = SessionLocal()
 
+        #bootstrap
+        MonedaBootstrap(self.db).ingreso_monedas_basicas()
+
         # Crear controllers
         self.usuario_controller = UsuarioController(self.db)
         self.login_controller = LoginController(self.db)
+        self.nuevo_ingreso_controller = NuevoIngresoController(self.db)
 
-        # Cargar KV
-        Builder.load_file("Vista/login.kv")
-        Builder.load_file("Vista/crear_usuario.kv")
-        Builder.load_file("Vista/recuperar_password.kv")
+        ReaderKV()
 
-        sm = ScreenManager()
-        sm.add_widget(LoginScreen(name="login"))
-        sm.add_widget(CrearUsuarioScreen(name="crear_usuario"))
-        sm.add_widget(RecuperarPasswordScreen(name="recuperar_password"))
-        sm.add_widget(DashboardScreen(name="dashboard"))
-
-        return sm
+        return ScreensMG(nuevo_ingreso_controller=self.nuevo_ingreso_controller
+        )
     
     def change_screen(self, screen_name):
         self.root.current = screen_name
