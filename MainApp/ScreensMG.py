@@ -7,7 +7,7 @@ from Screens.login import LoginScreen
 from Screens.ingresos.funciones_ingresos.nuevo_ingreso import NuevoIngresoScreen
 
 
-def ScreensMG(nuevo_ingreso_controller):
+def ScreensMG():
 
     sm = ScreenManager()
 
@@ -16,12 +16,6 @@ def ScreensMG(nuevo_ingreso_controller):
     sm.add_widget(RecuperarPasswordScreen(name="recuperar_password"))
     sm.add_widget(DashboardScreen(name="dashboard"))
     sm.add_widget(InterfasIngresosScreen(name="interfas_ingresos"))
-
-    sm.add_widget(
-        NuevoIngresoScreen(
-            name="nuevo_ingreso",
-            controller=nuevo_ingreso_controller
-        )
-    )
+    sm.add_widget(NuevoIngresoScreen(name="nuevo_ingreso"))
 
     return sm

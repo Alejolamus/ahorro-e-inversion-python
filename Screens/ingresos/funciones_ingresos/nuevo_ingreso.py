@@ -1,24 +1,15 @@
-from kivymd.uix.screen import MDScreen
-from Screens.selectores.selector_monedas import MonedaSelector
+from kivy.uix.screenmanager import Screen
 
-class NuevoIngresoScreen(MDScreen):
+class NuevoIngresoScreen(Screen):
 
-    def __init__(self, controller, **kwargs):
-        super().__init__(**kwargs)
-        self.controller = controller
-
-        self.moneda_selector = MonedaSelector(
-            get_items_callback=self.obtener_monedas,
-            on_select_callback=self.moneda_seleccionada
+    def on_text_change(self):
+        ids = self.ids
+        self.ids.registro_ingreso.disabled = not (
+            ids.nombre_ingreso.text and
+            ids.fecha_inicio.text and
+            ids.fecha_fin.text and
+            ids.tipo_ingreso.text and
+            ids.frecuencia.text and
+            ids.moneda.text and
+            ids.monto.text
         )
-    def obtener_monedas(self):
-        return [
-            f"{pais} - {divisa}"
-            for pais, divisa in self.controller.LlamarMonedasEnBase()
-        ]
-    def abrir_selector(self):
-        self.moneda_selector.open()
-
-    def moneda_seleccionada(self, texto):
-        self.ids.moneda_seleccionada.text = texto
-

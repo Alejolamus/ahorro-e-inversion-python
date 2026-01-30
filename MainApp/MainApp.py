@@ -38,8 +38,7 @@ class MainApp(MDApp):
 
         ReaderKV()
 
-        return ScreensMG(nuevo_ingreso_controller=self.nuevo_ingreso_controller
-        )
+        return ScreensMG()
     
     def change_screen(self, screen_name):
         self.root.current = screen_name

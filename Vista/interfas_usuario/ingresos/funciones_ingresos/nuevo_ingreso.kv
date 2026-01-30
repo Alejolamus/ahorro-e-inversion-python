@@ -24,42 +24,53 @@
 
             # ---------- FORMULARIO ----------
             MDTextField:
-                id: nombre
+                id: nombre_ingreso
                 mode: "round"
                 hint_text: "Nombre o concepto del ingreso"
+                on_text: root.on_text_change()
 
             MDTextField:
                 id: fecha_inicio
                 mode: "round"
                 hint_text: "Fecha inicio"
+                on_text: root.on_text_change()
 
             MDTextField:
                 id: fecha_fin
                 mode: "round"
                 hint_text: "Fecha fin"
+                on_text: root.on_text_change()
 
-            # ---------- SELECTOR DE MONEDA ----------
             MDBoxLayout:
-                orientation: "horizontal"
-                size_hint_y: None
-                height: dp(48)
-                padding: dp(12)
-                md_bg_color: app.theme_cls.bg_light
+                id: tipos
+                hint_text: "indique si es ingreso es (Ocacional o Recurrente)"
 
-                MDLabel:
-                    id: moneda_seleccionada
-                    text: "Seleccionar moneda"
-                    halign: "left"
+            MDTextField:
+                id: tipo_ingreso
+                mode: "round"
+                hint_text: "Tipo de ingreso"
+                on_text: root.on_text_change()
 
-                MDIconButton:
-                    icon: "chevron-down"
-                    on_release: root.abrir_selector()  # aquí abrimos el MDDialog con las monedas
+            MDTextField:
+                id: frecuencia
+                mode: "round"
+                hint_text: "Cada cuanto se registra el ingreso, 0 para ocacionales"
+                on_text: root.on_text_change()
+
+            MDTextField:
+                id: moneda
+                mode: "round"
+                hint_text: "pais de la moneda"
+                on_text: root.on_text_change()
 
             MDTextField:
                 id: monto
                 mode: "round"
                 hint_text: "Monto"
+                on_text: root.on_text_change()
 
             MDFillRoundFlatButton:
+                id: registro_ingreso
                 text: "Registrar"
+                disabled: True
                 pos_hint: {"center_x": 0.5}

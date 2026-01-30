@@ -2,11 +2,7 @@ from kivy.lang import Builder
 
 # Cargar KV
 def ReaderKV():
-    #Accesorios
-    Builder.load_file("Screens/selectores/selector_item.kv")
-    Builder.load_file("Screens/selectores/selector_recycleview.kv")
 
-    #_______
     Builder.load_file("Vista/login.kv")
     Builder.load_file("Vista/crear_usuario.kv")
     Builder.load_file("Vista/recuperar_password.kv")
