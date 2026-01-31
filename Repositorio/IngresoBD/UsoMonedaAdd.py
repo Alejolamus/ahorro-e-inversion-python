@@ -1,27 +1,26 @@
-from Modelo.UsosDeDivisas import UsoDeDivisas
+from Modelo.UsosDeDivisas import UsoDeDivisas, Frecuencias, Clasificacion
 from sqlalchemy.orm import Session
 from datetime import date
-def CrearUsuario(
+def usomoneda(
         db:Session,
         IdUsuario: int,
-        Tipo: str,
+        Tipo: Clasificacion,
         Nombre: str,
+        Creacion: date,
         Corte: date,
         IdMoneda: int,
         RegistroAuto: bool,
-        Frecuencia: str,
-        MontoTransaccion: float
+        Frecuencia: Frecuencias
 ):
     UsoMoney = UsoDeDivisas(
         id_usuario = IdUsuario,
         tipo = Tipo,
         nombre = Nombre,
-        creacion = date.today(),
+        creacion = Creacion,
         corte = Corte,
         id_moneda = IdMoneda,
         registro_automatico = RegistroAuto,
-        frecuencia = Frecuencia,
-        monto_transaccion = MontoTransaccion
+        frecuencia = Frecuencia
     )
     db.add(UsoMoney)
     db.commit()

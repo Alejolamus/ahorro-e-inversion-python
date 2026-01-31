@@ -20,7 +20,7 @@ BZ,BLZ,Belice,BZD,Belize dollar,$
 BJ,BEN,Benín,XOF,West African CFA franc,Fr
 BT,BTN,Bután,BTN,Bhutanese ngultrum,Nu.
 BO,BOL,Bolivia,BOB,Bolivian boliviano,Bs.
-BA,BIH,Bosnia y Herzegovina,BAM,Bosnia and Herzegovina convertible mark,KM
+BA,BIH,Bosnia Y Herzegovina,BAM,Bosnia and Herzegovina convertible mark,KM
 BW,BWA,Botsuana,BWP,Botswana pula,P
 BR,BRA,Brasil,BRL,Brazilian real,R$
 BN,BRN,Brunéi,BND,Brunei dollar,$
@@ -46,7 +46,7 @@ DK,DNK,Dinamarca,DKK,Danish krone,kr
 DJ,DJI,Yibuti,DJF,Djiboutian franc,Fr
 DM,DMA,Dominica,XCD,Eastern Caribbean dollar,$
 DO,DOM,República Dominicana,DOP,Dominican peso,$
-CD,COD,República Democrática del Congo,CDF,Congolese franc,FC
+CD,COD,República Democrática Del Congo,CDF,Congolese franc,FC
 EC,ECU,Ecuador,USD,United States dollar,$
 EG,EGY,Egipto,EGP,Egyptian pound,£
 SV,SLV,El Salvador,USD,United States dollar,$
@@ -80,7 +80,7 @@ IQ,IRQ,Irak,IQD,Iraqi dinar,ع.د
 IE,IRL,Irlanda,EUR,Euro,€
 IL,ISR,Israel,ILS,Israeli new shekel,₪
 IT,ITA,Italia,EUR,Euro,€
-CI,CIV,Costa de Marfil,XOF,West African CFA franc,Fr
+CI,CIV,Costa De Marfil,XOF,West African CFA franc,Fr
 JM,JAM,Jamaica,JMD,Jamaican dollar,$
 JP,JPN,Japón,JPY,Japanese yen,¥
 JO,JOR,Jordania,JOD,Jordanian dinar,د.ا
@@ -125,8 +125,8 @@ NZ,NZL,Nueva Zelanda,NZD,New Zealand dollar,$
 NI,NIC,Nicaragua,NIO,Nicaraguan córdoba,C$
 NE,NER,Níger,XOF,West African CFA franc,Fr
 NG,NGA,Nigeria,NGN,Nigerian naira,₦
-KP,PRK,Corea del Norte,KPW,North Korean won,₩
-MK,MKD,Macedonia del Norte,MKD,denar,den
+KP,PRK,Corea Del Norte,KPW,North Korean won,₩
+MK,MKD,Macedonia Del Norte,MKD,denar,den
 NO,NOR,Noruega,NOK,Norwegian krone,kr
 OM,OMN,Omán,OMR,Omani rial,ر.ع.
 PK,PAK,Pakistán,PKR,Pakistani rupee,₨
@@ -139,16 +139,16 @@ PH,PHL,Filipinas,PHP,Philippine peso,₱
 PL,POL,Polonia,PLN,Polish złoty,zł
 PT,PRT,Portugal,EUR,Euro,€
 QA,QAT,Catar,QAR,Qatari riyal,ر.ق
-CG,COG,República del Congo,XAF,Central African CFA franc,Fr
+CG,COG,República Del Congo,XAF,Central African CFA franc,Fr
 RO,ROU,Rumanía,RON,Romanian leu,lei
 RU,RUS,Rusia,RUB,Russian ruble,₽
 RW,RWA,Ruanda,RWF,Rwandan franc,Fr
-KN,KNA,San Cristóbal y Nieves,XCD,Eastern Caribbean dollar,$
+KN,KNA,San Cristóbal Y Nieves,XCD,Eastern Caribbean dollar,$
 LC,LCA,Santa Lucía,XCD,Eastern Caribbean dollar,$
-VC,VCT,San Vicente y las Granadinas,XCD,Eastern Caribbean dollar,$
+VC,VCT,San Vicente Y Las Granadinas,XCD,Eastern Caribbean dollar,$
 WS,WSM,Samoa,WST,Samoan tālā,T
 SM,SMR,San Marino,EUR,Euro,€
-ST,STP,Santo Tomé y Príncipe,STN,São Tomé and Príncipe dobra,Db
+ST,STP,Santo Tomé Y Príncipe,STN,São Tomé and Príncipe dobra,Db
 SA,SAU,Arabia Saudita,SAR,Saudi riyal,ر.س
 SN,SEN,Senegal,XOF,West African CFA franc,Fr
 RS,SRB,Serbia,RSD,Serbian dinar,дин.
@@ -160,8 +160,8 @@ SI,SVN,Eslovenia,EUR,Euro,€
 SB,SLB,Islas Salomón,SBD,Solomon Islands dollar,$
 SO,SOM,Somalia,SOS,Somali shilling,Sh
 ZA,ZAF,Sudáfrica,ZAR,South African rand,R
-KR,KOR,Corea del Sur,KRW,South Korean won,₩
-SS,SSD,Sudán del Sur,SSP,South Sudanese pound,£
+KR,KOR,Corea Del Sur,KRW,South Korean won,₩
+SS,SSD,Sudán Del Sur,SSP,South Sudanese pound,£
 ES,ESP,España,EUR,Euro,€
 LK,LKA,Sri Lanka,LKR,Sri Lankan rupee,Rs  රු
 SD,SDN,Sudán,SDG,Sudanese pound,ج.س
@@ -175,7 +175,7 @@ TH,THA,Tailandia,THB,Thai baht,฿
 TL,TLS,Timor Oriental,USD,United States dollar,$
 TG,TGO,Togo,XOF,West African CFA franc,Fr
 TO,TON,Tonga,TOP,Tongan paʻanga,T$
-TT,TTO,Trinidad y Tobago,TTD,Trinidad and Tobago dollar,$
+TT,TTO,Trinidad Y Tobago,TTD,Trinidad and Tobago dollar,$
 TN,TUN,Túnez,TND,Tunisian dinar,د.ت
 TR,TUR,Turquía,TRY,Turkish lira,₺
 TM,TKM,Turkmenistán,TMT,Turkmenistan manat,m
@@ -188,7 +188,7 @@ US,USA,Estados Unidos,USD,United States dollar,$
 UY,URY,Uruguay,UYU,Uruguayan peso,$
 UZ,UZB,Uzbekistán,UZS,Uzbekistani soʻm,so'm
 VU,VUT,Vanuatu,VUV,Vanuatu vatu,Vt
-VA,VAT,Ciudad del Vaticano,EUR,Euro,€
+VA,VAT,Ciudad Del Vaticano,EUR,Euro,€
 VE,VEN,Venezuela,VES,Venezuelan bolívar soberano,Bs.S.
 VN,VNM,Vietnam,VND,Vietnamese đồng,₫
 YE,YEM,Yemen,YER,Yemeni rial,﷼

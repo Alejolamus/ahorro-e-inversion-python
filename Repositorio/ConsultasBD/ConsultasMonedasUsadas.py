@@ -9,3 +9,11 @@ def ConsultarMonedasUsadas(
         MonedasEnUso.id_user == id_usuario
     ).all()
     return monedas_usadas_db
+def ConsultaExitMoney(
+    db:Session,
+    id_money: int  
+):
+    moneda_consultada_db = db.query(MonedasEnUso.id, MonedasEnUso.monto).filter(
+        MonedasEnUso.id_moneda == id_money
+    ).first()
+    return moneda_consultada_db

@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from Modelo.Movimientos import Movimientos
 
-def ConsultasParticipaciones(
+def ConsultasMovimientos(
     db:Session,
     id_usuario: int  
 ):

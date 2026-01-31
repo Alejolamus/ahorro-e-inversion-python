@@ -15,3 +15,8 @@ def consultarIso2(
     ).first()
     iso2=moneda_db.iso_alpha2
     return iso2
+def consultapais(db:Session, paisC:str):
+    moneda_db_pais = db.query(Monedas.id).filter(
+        Monedas.pais == paisC
+    ).first()
+    return moneda_db_pais

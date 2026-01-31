@@ -5,8 +5,7 @@ from sqlalchemy import (
     ForeignKey,
     Enum as SQLEnum,
     Date,
-    Boolean,
-    Float
+    Boolean
 )
 from sqlalchemy.orm import relationship
 from enum import Enum
@@ -24,6 +23,7 @@ class Frecuencias(str, Enum):
     Mensual = "Mensual"
     Quincenal = "Quincenal"
     Semanal = "Semanal"
+    Irregular = "Irregular"
 
 
 class UsoDeDivisas(Base):
