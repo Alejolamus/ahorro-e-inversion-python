@@ -14,7 +14,7 @@ class NuevoIngresoController:
             self.funtions = funciones_de_tratamiento
     
     def registroingreso( self,id_user, nombremov, fechainicio, 
-                        fechafin, tipo, frecuencia, money, cantidad):
+                        fechafin, tipo, auto,frecuencia, money,cantidad):
         fechainicio_date = self.funtions.parse_fecha(fechainicio)
         fechafin_date = self.funtions.parse_fecha(fechafin)
         cantiad_float = self.funtions.parse_cantidad(cantidad)
@@ -23,6 +23,7 @@ class NuevoIngresoController:
         pais_de_moneda=self.funtions.filtrotext(money)
         id_money = consultapais(self.db, pais_de_moneda)
         exit_moneda_usando = ConsultaExitMoney(self.db, id_money)
+        auto_boolean = self.funtions.parse_bool(auto)
 
         elementos=[fechainicio_date, fechafin_date, cantiad_float, frecuencia_enum, tipo_enum]
         Valores_invalidos=[]
@@ -33,21 +34,32 @@ class NuevoIngresoController:
             except (elementos[0].exito and elementos[1])==False:
                     Valores_invalidos.append(elementos[0].exito)
         Exist_Use=ConsultasUso_Nombre(self.db, nombremov)
-        if Valores_invalidos==[] and id_money!=None:
-             elemento=""
-             if Exist_Use!=None:
-                elementodb=usomoneda(self.db, id_user, tipo_enum.value,
-                        nombremov, fechainicio_date, fechafin_date, id_money,
-                        )
-                elemento=elementodb.id
-             else:
-                  elemento=Exist_Use
-             CrearMovimiento(self.db, id_user, elemento, date.today(), id_money, cantiad_float)
-             if exit_moneda_usando == None:
-                  CrearMonedaDeUsuario(self.db, id_user, id_money, cantiad_float)
-             else:
-                  monto_act = exit_moneda_usando.monto + cantiad_float
-                  ActualizarMonedaEnUso(exit_moneda_usando.id, monto_act)
 
-        else:
-             return Valores_invalidos
+        
+
+        if Valores_invalidos==[] and id_money!=None and fechafin_date>=fechainicio:
+
+          match (Exist_Use==None, exit_moneda_usando==None):
+               case (True, True):
+                    MovCreation=CrearMovimiento(self.db, id_user, Exist_Use, 
+                                                  date.today(), id_money, cantiad_float)
+                    newm_monto=exit_moneda_usando.monto+cantiad_float
+                    ActBilletera=ActualizarMonedaEnUso(self.db, id_money,newm_monto)
+               case (False, True):
+                    new_use=usomoneda(self.db, id_user, tipo_enum, nombremov, 
+                                        fechainicio_date, fechafin_date, id_money,
+                                        auto_boolean, frecuencia_enum)
+                    new_movimiento=CrearMovimiento(self.db, id_user, new_use.id, 
+                                                  date.today(), id_money, cantiad_float)
+                    nuevo_monto=exit_moneda_usando.monto+cantiad_float
+                    actualizar_billetera = ActualizarMonedaEnUso(self.db, id_money,newm_monto)
+               case _:
+                    new_Use=usomoneda(self.db, id_user, tipo_enum, nombremov, 
+                                        fechainicio_date, fechafin_date, id_money,
+                                        auto_boolean, frecuencia_enum)
+                    new_Movimiento=CrearMovimiento(self.db, id_user, new_use.id, 
+                                                  date.today(), id_money, cantiad_float)
+                    new_billete=CrearMonedaDeUsuario(self.db, id_user, id_money, cantiad_float)
+
+        
+        

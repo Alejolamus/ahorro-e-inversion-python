@@ -57,3 +57,16 @@ class funciones_de_tratamiento:
             paiscvs += " " + x.capitalize()
             paiscvs = paiscvs.strip()
         return paiscvs
+    def parse_bool(self, automatic):
+         boolsTrans=(automatic.lower()).replace(" ","")
+         match boolsTrans:
+              case "si":
+                   return {"exito": True,
+                           "value":True}
+              case "no":
+                   return {"exito": True,
+                           "value":False}
+              case _:
+                   return {"exito": False,
+                           "value":"Valor de automatizacion invalido"}
+         
